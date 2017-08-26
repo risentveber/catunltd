@@ -23,3 +23,16 @@ $(function() {
         navMain.collapse('hide');
     });
 });
+$('#download').on('click',function () {
+    yaCounter37747250.reachGoal('catalog');
+    console.log('downloaded');
+});
+
+for(var i= 1; i <= 7; i++) {
+    var loader = document.createElement("img");
+    loader.addEventListener('load', (function (i) {
+        var img = document.getElementById("slide-" + i);
+        img.src = "/assets/images/slide-" + i + ".jpg";
+    }).bind(null, i));
+    loader.src = "/assets/images/slide-" + i + ".jpg"
+}

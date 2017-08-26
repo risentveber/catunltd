@@ -140,6 +140,17 @@ section#manufacture {
     height: 500px
 }
 
+.slider-pro .sp-slide:first-child {
+ position: relative;
+ img {
+    width: 100%;
+    height: auto;
+ }
+}
+.slider-pro .sp-slide:not(:first-child) {
+    display: none;
+}
+
 #video {
     position: absolute;
     top: 0px;
@@ -171,4 +182,15 @@ section#manufacture {
 
 .contacts{
     text-align: center;
+}
+
+#download {
+    padding-right: 30px;
+    color: white;
+    background: red;
+    background-image: url('/assets/images/pdf.png');
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: right center;
+    margin: 10px;
 }
