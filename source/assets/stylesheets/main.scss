@@ -1,5 +1,5 @@
-@import url(/assets/fonts/bebasneue/bebasneue.css);
-@import url(/assets/fonts/linea/linea.css);
+@import url(../fonts/bebasneue/bebasneue.css);
+//@import url(../fonts/linea/linea.css);
 
 body {
     margin-top: 49px; }
@@ -78,6 +78,10 @@ section {
 .counter-icon {
     font-size: 50px; }
 
+h4.counter-title {
+    font-size: 36px;
+}
+
 .dark-layer {
     position: relative; }
 
@@ -103,7 +107,7 @@ section#about {
 section#about h5 {
     font-family: 'Bebas Neue';
     font-size: 20px;
-    font-weight: 500; }
+    font-weight: 700; }
 section#about .content-box:hover .icon-black {
     background-color: #c7a674;
     color: #fff; }

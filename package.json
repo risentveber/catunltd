@@ -16,6 +16,7 @@
     "eslint-plugin-react": "^6.8.0",
     "metalsmith": "^2.3.0",
     "metalsmith-clean-css": "^5.0.0",
+    "metalsmith-concat": "^6.0.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "^2.0.2",
     "metalsmith-layouts": "^1.7.0",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "metalsmith-path": "^0.2.0",
-    "metalsmith-sass": "^1.4.0"
+    "metalsmith-sass": "^1.4.0",
+    "node-sass": "^4.7.2"
   }
 }

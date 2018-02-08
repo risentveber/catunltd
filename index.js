@@ -1,13 +1,12 @@
 const Metalsmith = require('metalsmith');
 const timer      = require('./plugins/timer');
-const jade       = require('metalsmith-jade');
 const permalinks = require('metalsmith-permalinks');
 const uglify     = require('metalsmith-uglify');
-const less       = require('metalsmith-less');
 const ignore     = require('metalsmith-ignore');
 const cleanCss   = require('metalsmith-clean-css');
 const sass       = require('metalsmith-sass');
 const path       = require('metalsmith-path');
+const concat = require('metalsmith-concat');
 
 Metalsmith(__dirname)
     .metadata({
@@ -19,29 +18,38 @@ Metalsmith(__dirname)
     .source('./source')
     .destination('./build')
     .clean(true)
-    .use(jade())
     .use(permalinks())
-    // .use(layouts({
-    //     engine: 'jade'
-    // }))
     .use(sass({
         outputStyle: "expanded"
     }))
-    //.use(cleanCss())
+    .use(concat({
+        files: 'assets/js/*.js',
+        output: 'assets/js/app.js'
+    }))
+    .use(concat({
+        files: 'assets/stylesheets/*.css',
+        output: 'assets/style/app.css'
+    }))
+    .use(cleanCss())
     .use(uglify())
     .use(ignore([
         '**/*.less',
         '**/*.js',
         '**/*.css',
+        '**/.DS_Store',
+        '.DS_Store',
         '**/assets/**',
-        '!/assets/js/main.min.js',
-        '!/assets/js/turbolinks.min.js',
-        '!/assets/stylesheets/main.css',
-        '!assets/**',
+        '!assets/js/app.min.js',
+        '!assets/fonts/**',
+        '!assets/style/**',
+        '!assets/images/**'
     ]))
     //.use(path({ directoryIndex : "index.html" }))
     .build((err, files) => {
-        if (err) { throw err; }
+        if (err) {
+            console.log(err)
+            throw err;
+        }
         process.stdout.write('\x1b[1m');
         Object.keys(files).sort().forEach(f => {
             process.stdout.write('\t' + f + '\n');
