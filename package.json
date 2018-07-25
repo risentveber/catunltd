@@ -27,8 +27,8 @@
     "metalsmith-watch": "^1.0.3"
   },
   "dependencies": {
-    "metalsmith-path": "^0.2.0",
-    "metalsmith-sass": "^1.4.0",
-    "node-sass": "^4.7.2"
+    "metalsmith-path": "^0.3.1",
+    "metalsmith-sass": "^1.5.1",
+    "node-sass": "^4.9.2"
   }
 }
